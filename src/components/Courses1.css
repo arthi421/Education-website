@@ -1,0 +1,71 @@
+.course-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 20px; /* Space between the courses */
+    padding: 20px; /* Padding around the grid */
+    justify-content: center; /* Centers items horizontally */
+    align-items: flex-start; /* Aligns items to the top of the container */
+}
+
+.course {
+    background-color:  #f8d2fe; /* Light grey background for each course */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for each course box */
+    width: calc(33.333% - 20px); /* Three items per row, accounting for gap */
+    text-align: center; /* Center aligns the text inside the box */
+    transition: transform 0.3s ease; /* Smooth transform for animations */
+}
+
+.course h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333; /* Darker text for better readability */
+}
+
+.course p {
+    font-size: 14px;
+    color: #666; /* Lighter text for descriptions */
+}
+
+.course button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.course button:hover {
+    background-color: purple; /* Darken button on hover */
+}
+
+.course button:active {
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
+/* Animation on course entry */
+.course {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+    .course {
+        width: calc(50% - 20px); /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .course {
+        width: 100%; /* One item per row on small screens */
+    }
+}
